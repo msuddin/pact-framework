@@ -1,0 +1,48 @@
+{
+    "provider": {
+        "name": "test_provider"
+    },
+    "consumer": {
+        "name": "test_consumer"
+    },
+    "interactions": [
+        {
+            "description": "GET REQUEST",
+            "request": {
+                "method": "GET",
+                "path": "/provider-hello"
+            },
+            "response": {
+                "status": 200,
+                "body": "provider is alive"
+            }
+        },
+        {
+            "description": "POST REQUEST",
+            "request": {
+                "method": "POST",
+                "path": "/provider-hello",
+                "headers": {
+                    "content-type": "application/json"
+                },
+                "body": {
+                    "name": "consumer"
+                }
+            },
+            "response": {
+                "status": 201,
+                "body": {
+                    "name": "consumer"
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.0"
+        }
+    }
+}
